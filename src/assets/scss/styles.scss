@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "~bootstrap/scss/bootstrap";
+@import "variables";
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.board {
+  .col-md-3:nth-child(even) {
+    margin: 0 125px;
+  }
+
+  h2 {
+    color: $gray;
+  }
+}
+
+.color-violet {
+  color: $violet;
+}
+
+.bg-violet {
+  background-color: $violet;
+}
+
+.btn-violet {
+  background-color: $light-violet;
+  color: $violet;
+  font-weight: 700;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.fs-7 {
+  font-size: 0.75rem;
+}
