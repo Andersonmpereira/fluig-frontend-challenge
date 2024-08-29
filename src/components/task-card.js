@@ -1,13 +1,15 @@
 class TaskCard extends HTMLElement {
   constructor() {
     super();
+    this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
     const statusClass = this.getAttribute('status') || 'default-class';
-    const hasExpDate = this.getAttribute('expirou') === 'true';
-    
-    this.innerHTML = `
+    const hasExpDate = this.getAttribute('exp-date') === 'true';
+
+    this.shadowRoot.innerHTML += `
+      <link rel="stylesheet" href="/styles.css">
       <div class="card mt-3">
         <div class="card-body p-4">
           <h5 class="card-title">

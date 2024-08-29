@@ -20,17 +20,16 @@
   <main>
     <div class="container-fluid board mt-4">
       <div class="row">
-        <div class="col-md-3">
-          <h2 class="fs-6 fw-normal">A fazer (<span id="todo"></span>)</h2>
-          <add-button></add-button>
-          <task-card></task-card>
+        <div class="col-md-3" id="todo">
+          <h2 class="fs-6 fw-normal">A fazer (<span id="todo-count"></span>)</h2>
+          <add-button></add-button>          
         </div>
-        <div class="col-md-3">
-          <h2 class="fs-6 fw-normal">Fazendo (<span id="doing"></span>)</h2>
+        <div class="col-md-3" id="doing">
+          <h2 class="fs-6 fw-normal">Fazendo (<span id="doing-count"></span>)</h2>
           <add-button></add-button>
         </div>
-        <div class="col-md-3">
-          <h2 class="fs-6 fw-normal">Concluido (<span id="done"></span>)</h2>
+        <div class="col-md-3" id="done">
+          <h2 class="fs-6 fw-normal">Concluido (<span id="done-count"></span>)</h2>
           <add-button></add-button>
         </div>
       </div>
