@@ -2,8 +2,10 @@
   "scripts": {
     "start": "concurrently \"npm run start:webpack\" \"npm run start:json-server\"",
     "start:webpack": "webpack serve --mode development",
-    "start:json-server": "json-server --watch mock/tasks.json --port 3001",
-    "build": "webpack --mode production"
+    "start:json-server": "json-server --watch mock/tasks.json --port 3002",
+    "build": "webpack --mode production",
+    "test": "npx cypress run",
+    "test:open": "npx cypress open"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -12,6 +14,7 @@
     "bootstrap": "^5.3.3",
     "concurrently": "^8.2.2",
     "css-loader": "^7.1.2",
+    "cypress": "^13.14.1",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.0",
     "json-server": "^1.0.0-beta.2",
