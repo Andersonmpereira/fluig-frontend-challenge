@@ -14,15 +14,18 @@ const loadTasks = async () => {
 
     data.forEach(task => {
       const taskCard = document.createElement('task-card');
+      const today = new Date().toISOString()
 
-      taskCard.setAttribute('status', task.deadline_date < new Date().toISOString() ? 'text-danger' : 'text-success');
-      taskCard.setAttribute('exp-date', task.deadline_date < new Date().toISOString());
+      taskCard.setAttribute('status', task.deadline_date < today ? 'text-danger' : 'text-success');
+      taskCard.setAttribute('exp-date', task.deadline_date < today );
       taskCard.setAttribute('data-id', task.id);
 
       taskCard.appendChild(createSlot('title', task.title));
       taskCard.appendChild(createSlot('description', task.description));
       taskCard.appendChild(createSlot('left', `${formatTimeAgo(task.created_date)} nesta coluna`));
-      taskCard.appendChild(createSlot('right', `Expirou a ${formatTimeAgo(task.deadline_date)}`));
+      taskCard.appendChild(
+        createSlot('right', `${formatTimeAgo(task.deadline_date)}`)
+      );
 
       const column = board[task.status];
       if (column) {

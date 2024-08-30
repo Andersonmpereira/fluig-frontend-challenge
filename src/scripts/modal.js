@@ -44,10 +44,6 @@ export const newModal = async ({ from, taskId = null }) => {
     } catch (error) {
       console.error('Erro ao obter a tarefa:', error);
     }
-  } else {
-    statusSelect.value = '0';
-    deadlineInput.value = '';
-    document.getElementById('enable-deadline').checked = false;
   }
 
   document.getElementById('save-task').addEventListener('click', async () => {

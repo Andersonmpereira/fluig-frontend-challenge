@@ -10,5 +10,5 @@ export const deleteTask = async (taskId) => {
     throw new Error('Erro ao deletar a tarefa.');
   }
 
-  return response.json();
+  return response.status === 204 ? undefined : response.json();
 };
