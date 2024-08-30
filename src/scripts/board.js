@@ -1,14 +1,10 @@
 import { formatTimeAgo } from '../utils/timeFormat.js';
 import { createSlot } from '../utils/createSlot.js';
+import { getTasks } from '../services/get.js';
 
-fetch('http://localhost:3001/tasks')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
+const loadTasks = async () => {
+  try {
+    const data = await getTasks();
     const board = {
       0: document.getElementById('todo'),
       1: document.getElementById('doing'),
@@ -33,7 +29,9 @@ fetch('http://localhost:3001/tasks')
         console.error('Column for status', task.status, 'not found');
       }
     });
-  })
-  .catch(error => {
+  } catch (error) {
     console.error('Fetch error:', error);
-  });
+  }
+};
+
+loadTasks();
