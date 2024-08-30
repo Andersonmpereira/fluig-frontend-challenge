@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "~bootstrap/scss/bootstrap";
+@import "variables";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  background-color: $light-violet;
+  color: $violet;
+  font-weight: 700;
+}
+
+form {
+  .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .bg-violet {
+    color: $white;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &:hover {
+      background-color: $violet;
+      color: $white;
+      opacity: 0.9;
+    }
+  }
+}
+
+.board {
+  .col-md-3:nth-child(even) {
+    margin: 0 125px;
+
+    @media (max-width: 1024px) {
+      margin: 0;
+    }
+  }
+
+  h2 {
+    color: $gray;
+  }
+}
+
+.color-violet {
+  color: $violet;
+}
+
+.bg-violet {
+  background-color: $violet;
+}
+
+.btn-violet {
+  background-color: $light-violet;
+  color: $violet;
+  font-weight: 700;
+
+  &:hover {
+    background-color: $light-violet;
+    color: $violet;
+    opacity: 0.9;
+  }
+}
+
+.w-full {
+  width: 100%;
+}
+
+.fs-7 {
+  font-size: 0.75rem;
+}
+
+.input-inline {
+  border: transparent;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.text-success {
+  color: $green !important; // Override Bootstrap's default green color
+}
