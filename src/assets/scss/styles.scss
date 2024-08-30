@@ -2,8 +2,20 @@
 @import "~bootstrap/scss/bootstrap";
 @import "variables";
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 footer {
@@ -59,6 +71,12 @@ form {
   background-color: $light-violet;
   color: $violet;
   font-weight: 700;
+
+  &:hover {
+    background-color: $light-violet;
+    color: $violet;
+    opacity: 0.9;
+  }
 }
 
 .w-full {
