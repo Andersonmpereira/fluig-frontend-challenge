@@ -1,4 +1,4 @@
-const notifyDefault = (msg) => {
+export const notifyDefault = (msg) => {
   return `<div class="toast align-items-center bg-violet border-0" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body">

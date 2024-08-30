@@ -38,7 +38,6 @@ export const modalTemplate = (from) => {
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn" data-bs-dismiss="modal">Excluir</button>
             <button type="button" class="btn bg-violet" id="save-task">Salvar</button>
           </div>
         </div>

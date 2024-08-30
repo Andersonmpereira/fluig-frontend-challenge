@@ -1,6 +1,7 @@
 import { formatTimeAgo } from '../utils/timeFormat.js';
 import { createSlot } from '../utils/createSlot.js';
 import { getTasks } from '../services/get.js';
+import { updateTaskCount } from '../utils/count.js';
 
 const loadTasks = async () => {
   try {
@@ -16,6 +17,7 @@ const loadTasks = async () => {
 
       taskCard.setAttribute('status', task.deadline_date < new Date().toISOString() ? 'text-danger' : 'text-success');
       taskCard.setAttribute('exp-date', task.deadline_date < new Date().toISOString());
+      taskCard.setAttribute('data-id', task.id);
 
       taskCard.appendChild(createSlot('title', task.title));
       taskCard.appendChild(createSlot('description', task.description));
@@ -29,6 +31,7 @@ const loadTasks = async () => {
         console.error('Column for status', task.status, 'not found');
       }
     });
+    updateTaskCount();
   } catch (error) {
     console.error('Fetch error:', error);
   }
